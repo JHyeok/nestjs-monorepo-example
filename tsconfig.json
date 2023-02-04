@@ -16,6 +16,20 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@lib/model-mongodb": [
+        "libs/model-mongodb/src"
+      ],
+      "@lib/model-mongodb/*": [
+        "libs/model-mongodb/src/*"
+      ],
+      "@lib/model-mysql": [
+        "libs/model-mysql/src"
+      ],
+      "@lib/model-mysql/*": [
+        "libs/model-mysql/src/*"
+      ]
+    }
   }
 }

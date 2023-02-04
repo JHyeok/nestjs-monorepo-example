@@ -1,8 +1,50 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/nestjs-monorepo-example/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/nestjs-monorepo-example/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/nestjs-monorepo-example",
+  "projects": {
+    "user-api": {
+      "type": "application",
+      "root": "apps/user-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-api/tsconfig.app.json"
+      }
+    },
+    "admin-api": {
+      "type": "application",
+      "root": "apps/admin-api",
+      "entryFile": "main",
+      "sourceRoot": "apps/admin-api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/admin-api/tsconfig.app.json"
+      }
+    },
+    "model-mongodb": {
+      "type": "library",
+      "root": "libs/model-mongodb",
+      "entryFile": "index",
+      "sourceRoot": "libs/model-mongodb/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/model-mongodb/tsconfig.lib.json"
+      }
+    },
+    "model-mysql": {
+      "type": "library",
+      "root": "libs/model-mysql",
+      "entryFile": "index",
+      "sourceRoot": "libs/model-mysql/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/model-mysql/tsconfig.lib.json"
+      }
+    }
   }
 }
