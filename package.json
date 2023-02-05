@@ -2,9 +2,13 @@
   "name": "nestjs-monorepo-example",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": {
+    "name": "JaeHyeok Kim",
+    "email": "dev.jhyeok@gmail.com",
+    "url": "https://github.com/JHyeok"
+  },
   "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",

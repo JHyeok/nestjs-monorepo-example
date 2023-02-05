@@ -1,21 +1,23 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from "@nestjs/common";
 import { UserApiService } from './user-api.service';
-import { ModelMongodbService } from '@lib/model-mongodb';
+import { CatModel } from '@lib/model-mongodb/cat/cat.model';
 
 @Controller()
 export class UserApiController {
-  constructor(
-    private readonly userApiService: UserApiService,
-    private readonly modelMongodbService: ModelMongodbService,
-  ) {}
+  constructor(private readonly userApiService: UserApiService) {}
 
   @Get()
   getHello(): string {
     return this.userApiService.getHello();
   }
 
-  @Get('/model-mongodb')
-  getModel(): string {
-    return this.modelMongodbService.getHello();
+  @Get('/cats')
+  async getModel(): Promise<CatModel[]> {
+    return await this.userApiService.findAll();
+  }
+
+  @Post('/cats-test')
+  async createModel(): Promise<CatModel> {
+    return await this.userApiService.create();
   }
 }
