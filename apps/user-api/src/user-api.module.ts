@@ -4,8 +4,8 @@ import { UserApiService } from './user-api.service';
 import { CatModule } from '@lib/model-mongodb/cat/cat.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MongooseConfigService } from '@lib/model-mongodb/mongoose.config.service';
-import { CatQueryRepository } from './cat.query.repository';
-import { CatRepository } from './cat.repository';
+import { CatRepository } from '@lib/model-mongodb/cat/cat.repository';
+import { CatQueryRepository } from '@lib/model-mongodb/cat/cat.query.repository';
 
 @Module({
   imports: [
@@ -15,6 +15,6 @@ import { CatRepository } from './cat.repository';
     CatModule,
   ],
   controllers: [UserApiController],
-  providers: [UserApiService, CatQueryRepository, CatRepository],
+  providers: [UserApiService, CatRepository, CatQueryRepository],
 })
 export class UserApiModule {}
