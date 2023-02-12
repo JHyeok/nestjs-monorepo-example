@@ -8,6 +8,9 @@ NestJS Monorepo Example (ref. [NestJS Monorepo](https://docs.nestjs.com/cli/mono
 
 ```bash
 $ yarn install
+
+# MySQL Docker Container
+$ docker-compose up -d
 ```
 
 ## Running the app
